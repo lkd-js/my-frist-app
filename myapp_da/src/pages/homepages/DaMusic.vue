@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div class="loading-container" v-show="false">
+    <!-- <div class="loading-container" v-if="isLoading">
       <van-loading type="spinner" color="#1989fa" />
-    </div>
+    </div> -->
     <iframe
       v-for="url_id in music_data"
       :key="url_id.id"
@@ -23,7 +23,8 @@ export default {
   name: "DaMusic",
   data() {
     return {
-      music_data: JSON.parse(sessionStorage.getItem("music")) || [],
+      music_data: JSON.parse(localStorage.getItem("music")) || [],
+      // isLoading: true,
     };
   },
   mounted() {
@@ -34,6 +35,7 @@ export default {
           "https://www.fastmock.site/mock/4c1868395afc5cb85827e651cd86af9a/lkd/api/music"
         )
         .then((res) => {
+          console.log("xxxxx");
           this.music_data = res.data.data.music_data;
         })
         .catch((err) => {
@@ -45,7 +47,7 @@ export default {
     music_data: {
       deep: true,
       handler(value) {
-        sessionStorage.setItem("music", JSON.stringify(value));
+        localStorage.setItem("music", JSON.stringify(value));
       },
     },
   },

@@ -9,12 +9,7 @@ import VueRouter from 'vue-router';
 import router from './router';
 Vue.use(VueRouter)
 
-import { Tab, Tabs, Tabbar, TabbarItem, Search, Sticky, Swipe, SwipeItem, Lazyload, Collapse, CollapseItem, NoticeBar, Grid, GridItem, Loading, Icon, Form, Field, Button } from 'vant';
-Vue.use(Tab);
-Vue.use(Tabs);
-Vue.use(Tabbar);
-Vue.use(TabbarItem);
-Vue.use(Search);
+import { Sticky, Swipe, SwipeItem, Lazyload, Collapse, CollapseItem, NoticeBar, Grid, GridItem, Loading, Icon, Form, Field, Button, NavBar, Uploader } from 'vant';
 Vue.use(Sticky);
 Vue.use(Swipe);
 Vue.use(SwipeItem);
@@ -29,6 +24,8 @@ Vue.use(Icon);
 Vue.use(Form);
 Vue.use(Field);
 Vue.use(Button);
+Vue.use(NavBar);
+Vue.use(Uploader);
 
 Vue.config.productionTip = false
 

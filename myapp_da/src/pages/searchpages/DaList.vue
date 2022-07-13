@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="list-container">
     <h2 v-show="info.isFirst">欢迎使用,点击搜索github用户吧</h2>
     <h2 v-show="info.isLoading">等待数据接收中</h2>
     <h2 v-show="info.errMsg">{{ info.errMsg }}</h2>
@@ -41,36 +41,38 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
-  width: 60%;
-  height: 90vh;
+.list-container {
+  width: 90%;
   overflow-y: auto;
   margin: 0 auto;
+  h2 {
+    text-align: center;
+  }
   ul {
     width: 100%;
-    margin: 0;
-    padding: 0;
     display: flex;
+    justify-content: space-around;
     flex-wrap: wrap;
     li {
       list-style: none;
-      width: 50%;
-      height: 100px;
+      width: 40%;
+      height: 1.5rem;
       box-sizing: border-box;
       border: 1px solid #ccc;
-      padding: 10px 10px 0 0;
+      border-radius: 0.05rem;
+      margin-top: 0.1rem;
+
       a {
         display: block;
         box-sizing: border-box;
         height: 100%;
         width: 100%;
-        padding: 0 0 10px 10px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         text-decoration: none;
-        color: skyblue;
+        color: #39c5bb;
         img {
           width: 80%;
         }

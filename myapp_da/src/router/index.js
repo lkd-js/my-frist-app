@@ -4,38 +4,50 @@ import DaHome from '../pages/DaHome'
 import DaSearch from '../pages/DaSearch'
 import DaPerson from '../pages/DaPerson'
 import DaContent from '../pages/DaContent'
-import DaLogin from '../pages/userpages/DaLogin'
-import DaUser from '../pages/userpages/DaUser'
+import DaVideo from '../pages/homepages/DaVideo'
+import DaMusic from '../pages/homepages/DaMusic'
+import DaMore from '../pages/homepages/DaMore'
 
 const router = new VueRouter({
     routes: [
         {
             path: '/',
-            redirect: 'DaHome'
+            redirect: 'DaHome/DaVideo',
         },
         {
+            name: 'home',
             path: '/DaHome',
             component: DaHome,
-        },
-        {
-            path: '/DaSearch',
-            component: DaSearch,
-        },
-        {
-            path: '/DaPerson',
-            component: DaPerson,
             children: [
                 {
-                    path: 'DaLogin',
-                    component: DaLogin
+                    name: 'video',
+                    path: 'DaVideo',
+                    component: DaVideo
                 },
                 {
-                    path: 'DaUser',
-                    component: DaUser
+                    name: 'music',
+                    path: 'DaMusic',
+                    component: DaMusic
+                },
+                {
+                    name: 'more',
+                    path: 'DaMore',
+                    component: DaMore
                 }
             ]
         },
         {
+            name: 'search',
+            path: '/DaSearch',
+            component: DaSearch,
+        },
+        {
+            name: 'person',
+            path: '/DaPerson',
+            component: DaPerson,
+        },
+        {
+            name: 'content',
             path: '/DaContent',
             component: DaContent
         }
